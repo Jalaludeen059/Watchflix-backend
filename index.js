@@ -11,7 +11,7 @@ app.use(cors());
 
 // Connect to MongoDB
 mongoose
-    .connect(process.env.DATABASE_URL, {
+    .connect(process.env.MONGODB_CONNECTION_STRING, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
         </head>
         <body>
           <div class="terminal">
-           Netskill Movie Apis-Jalal
+            Welcome to the WatchFlix API
           </div>
         </body>
       </html>
@@ -56,37 +56,10 @@ app.get('/', (req, res) => {
 });
 
 
-app.use('/api', moviesRoutes);
+app.use('/api/movies', moviesRoutes);
 
 // Start the server
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-
-
-// require('dotenv').config();
-
-// const express = require('express');
-// const mongoose = require('mongoose');
-// const routes = require('./routes/movies')
-
-// const app = express();
-// const mongoString = process.env.DATABASE_URL;
-
-
-
-// app.use(express.json());
-//  app.use('/api',routes);
-
-
-// mongoose.connect(mongoString);
-// const database = mongoose.connection;
-
-// database.on('error',(err)=>console.log(err));
-// database.on('connected',()=>console.log('Database connected'));
-
-// app.listen(3000, () => {
-//     console.log(`Server is running on port 3000`);
-// });
