@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
         </head>
         <body>
           <div class="terminal">
-            Welcome to the WatchFlix API
+           Jalaludeen-Netskill WatchFlix API
           </div>
         </body>
       </html>
